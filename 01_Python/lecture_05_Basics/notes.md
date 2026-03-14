@@ -1,273 +1,260 @@
-# Python Loops — Interview Ready Notes
+Python Loops — Interview Ready Notes
+1️⃣ What are Loops?
 
-## Table of Contents
-1. What are Loops?
-2. Types of Loops
-3. For Loop
-4. Range Function
-5. While Loop
-6. Loop Control Statements
-7. Nested Loops
-8. Practical Examples
+Loops allow a program to execute a block of code multiple times.
 
----
+Instead of writing repetitive code, loops automate repetition.
 
-## 1. What are Loops?
+Example problem:
 
-**Definition:** Loops allow a program to execute a block of code multiple times.
+Print numbers from 1 to 10
 
-**Purpose:** Instead of writing repetitive code, loops automate repetition.
+Without loop → 10 print statements
+With loop → 1 loop
 
-**Example Problem:** Print numbers from 1 to 10
-- Without loop → 10 print statements ❌
-- With loop → 1 loop ✅
+2️⃣ Types of Loops in Python
 
----
+Python mainly has:
 
-## 2. Types of Loops in Python
+Loop Type	Purpose
+For Loop	Iterate over sequence
+While Loop	Run until condition becomes false
 
-| Loop Type | Purpose |
-|-----------|---------|
-| **For Loop** | Iterate over sequences |
-| **While Loop** | Run until condition becomes false |
+Loop control statements:
 
-### Loop Control Statements
-- `break` — Stop the loop immediately
-- `continue` — Skip current iteration
-- `pass` — Placeholder (do nothing)
+break
+continue
+pass
+3️⃣ For Loop
+Definition
 
----
-
-## 3. For Loop
-
-### Definition
 A for loop is used to iterate over a sequence such as:
-- list
-- string
-- range
-- dictionary
-- tuple
 
-### Syntax
-```python
+list
+
+string
+
+range
+
+dictionary
+
+tuple
+
+Syntax
 for variable in sequence:
     statement
-```
+4️⃣ Using range() Function
 
-### Example
-```python
-for i in range(5):
-    print(i)
-```
+range() generates a sequence of numbers.
 
-**Output:**
-```
-0
-1
-2
-3
-4
-```
-
----
-
-## 4. Range Function
-
-### Definition
-`range()` generates a sequence of numbers.
-
-### Syntax
-```python
+Syntax
 range(start, stop, step)
-```
-
-| Parameter | Meaning |
-|-----------|---------|
-| `start` | Starting number (default: 0) |
-| `stop` | Ending number (excluded) |
-| `step` | Increment value (default: 1) |
-
-### Examples
-
-**Basic Range (0 to 4):**
-```python
+Parameter	Meaning
+start	starting number
+stop	ending number (excluded)
+step	increment value
+Example
 for i in range(5):
     print(i)
-```
-Output: `0 1 2 3 4` (Note: 5 is not included)
 
-**Range with Start and Stop (1 to 5):**
-```python
-for i in range(1, 6):
-    print(i)
-```
-Output: `1 2 3 4 5`
+Output
 
-**Range with Step (increment by 2):**
-```python
-for i in range(1, 10, 2):
-    print(i)
-```
-Output: `1 3 5 7 9`
-
-**Reverse Loop:**
-```python
-for i in range(10, 0, -1):
-    print(i)
-```
-Output: `10 9 8 7 6 5 4 3 2 1`
-
-### Loop Through String
-
-Strings are collections of characters.
-
-```python
-name = "Krish"
-for char in name:
-    print(char)
-```
-
-Output:
-```
-K
-r
-i
-s
-h
-```
-
----
-
-## 5. While Loop
-
-### Definition
-A while loop runs until the condition becomes false.
-
-### Syntax
-```python
-while condition:
-    statement
-```
-
-### Example
-```python
-count = 0
-while count < 5:
-    print(count)
-    count = count + 1
-```
-
-Output:
-```
 0
 1
 2
 3
 4
-```
 
-### Important Rule ⚠️
-**Always update the variable inside the loop**, otherwise you'll create an infinite loop.
+Note: 5 is not included
 
-**Bad Example (Infinite Loop):**
-```python
-while True:
-    print("Hello")  # Runs forever!
-```
-
----
-
-## 6. Loop Control Statements
-
-### Break Statement
-`break` stops the loop immediately.
-
-```python
-for i in range(10):
-    if i == 5:
-        break
+5️⃣ Range with Start and Stop
+for i in range(1,6):
     print(i)
-```
 
-Output:
-```
-0
+Output
+
 1
 2
 3
 4
-```
-Loop stops when i = 5.
-
-### Continue Statement
-`continue` skips the current iteration.
-
-**Example:** Print only odd numbers
-```python
-for i in range(10):
-    if i % 2 == 0:
-        continue
+5
+6️⃣ Range with Step
+for i in range(1,10,2):
     print(i)
-```
 
-Output:
-```
+Output
+
 1
 3
 5
 7
 9
-```
 
-### Pass Statement
-`pass` does nothing. Used as a placeholder.
+Step = 2
 
-```python
-for i in range(5):
-    if i == 3:
-        pass
+7️⃣ Reverse Loop
+for i in range(10,0,-1):
     print(i)
-```
 
-Output:
-```
+Output
+
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+8️⃣ Loop Through String
+
+Strings are collections of characters.
+
+Example:
+
+name = "Krish"
+
+for char in name:
+    print(char)
+
+Output
+
+K
+r
+i
+s
+h
+9️⃣ While Loop
+Definition
+
+A while loop runs until the condition becomes false.
+
+Syntax
+while condition:
+    statement
+Example
+count = 0
+
+while count < 5:
+    print(count)
+    count = count + 1
+
+Output
+
 0
 1
 2
 3
 4
-```
+Important Rule
 
----
+Always update the variable inside the loop.
 
-## 7. Nested Loops
+Otherwise:
 
-**Definition:** A loop inside another loop.
+Infinite loop
 
-```python
+Example
+
+while True:
+    print("Hello")
+
+Runs forever.
+
+🔟 Break Statement
+
+break stops the loop immediately.
+
+Example
+for i in range(10):
+
+    if i == 5:
+        break
+
+    print(i)
+
+Output
+
+0
+1
+2
+3
+4
+
+Loop stops when i = 5.
+
+1️⃣1️⃣ Continue Statement
+
+continue skips the current iteration.
+
+Example
+
+Print only odd numbers.
+
+for i in range(10):
+
+    if i % 2 == 0:
+        continue
+
+    print(i)
+
+Output
+
+1
+3
+5
+7
+9
+
+Even numbers skipped.
+
+1️⃣2️⃣ Pass Statement
+
+pass does nothing.
+
+Used as a placeholder.
+
+Example
+for i in range(5):
+
+    if i == 3:
+        pass
+
+    print(i)
+
+Output
+
+0
+1
+2
+3
+4
+
+pass simply ignores the condition.
+
+1️⃣3️⃣ Nested Loops
+
+Nested loop = loop inside another loop.
+
+Example
 for i in range(3):
-    for j in range(2):
-        print(f"i = {i} j = {j}")
-```
 
-Output:
-```
+    for j in range(2):
+
+        print("i =", i, "j =", j)
+
+Output
+
 i = 0 j = 0
 i = 0 j = 1
 i = 1 j = 0
 i = 1 j = 1
 i = 2 j = 0
 i = 2 j = 1
-```
-
----
-
-## 8. Practical Examples
-
-### Example 1: Sum of Natural Numbers
-
-**Using While Loop:**
-```python
+1️⃣4️⃣ Example — Sum of Natural Numbers
+Using While Loop
 n = 10
 sum = 0
 count = 1
@@ -276,33 +263,41 @@ while count <= n:
     sum = sum + count
     count += 1
 
-print(sum)  # Output: 55
-```
+print(sum)
 
-**Using For Loop:**
-```python
+Output
+
+55
+Using For Loop
 sum = 0
-for i in range(1, 11):
+
+for i in range(1,11):
     sum = sum + i
 
-print(sum)  # Output: 55
-```
+print(sum)
 
-### Example 2: Prime Numbers
+Output
 
-**Problem:** Print prime numbers between 1–100
+55
+1️⃣5️⃣ Example — Prime Numbers
 
-```python
-for num in range(1, 101):
+Print prime numbers between 1–100.
+
+for num in range(1,101):
+
     if num > 1:
-        for i in range(2, num):
+
+        for i in range(2,num):
+
             if num % i == 0:
                 break
+
         else:
             print(num)
-```
 
-Output: `2 3 5 7 11 13 17 19 23 ...`
+Output
+
+2 3 5 7 11 13 ...
 Most Common Python Loop Interview Questions
 Q1 What is a loop?
 
